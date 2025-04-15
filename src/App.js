@@ -1,21 +1,22 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import NameFetcher from './components/NameFetcher'; 
+import CatFact from './components/CatFact'; 
+import DogImages from './components/DogImages'; 
+import RandomJokes from './components/RandomJokes'; 
 
 function App() {
-  const [fact, setFact] = useState('');
-
-  useEffect(() => {
-    fetch('https://catfact.ninja/fact')
-      .then(res => res.json())
-      .then(data => setFact(data.fact));
-  }, []);
-
   return (
-    <div className='text-3xl font-extrabold text-blue-600 underline'>
-      <h1 className='text-4xl font-bold text-red-500 underline text-center mt-20'>
-        Random Cat Fact
-      </h1>
-      <p>{fact}</p>
+    <div>
+      <h1 className="text-2xl font-bold text-center my-6">Name API Component</h1>
+      <NameFetcher />
+      <h1 className="text-2xl font-bold text-center my-6">Cat Random Fact API Component</h1>
+      <CatFact />
+      <h1 className="text-2xl font-bold text-center my-6">Random Dog Images API Component</h1>
+      <DogImages />
+      <h1 className="text-2xl font-bold text-center my-6">Random Jokes API Component</h1>
+      <RandomJokes />
+    
+    
     </div>
   );
 }
